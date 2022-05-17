@@ -1,0 +1,289 @@
+@use "../../styles/partials.scss";
+
+@keyframes w-arrow {
+    from {left: 95%;}
+    to {left: 105%;}
+  }
+
+.section {
+    &__warehouses {
+        &--row {
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            height: 9rem;
+            padding: 1rem 1rem 3rem 1rem;
+            position: relative;
+            border-top: 0.0625rem solid partials.$Cloud;
+        }
+        &--address {
+            & > p {
+                max-width: 6rem;
+            }
+        }
+        &--location {
+                margin-bottom: 0.55rem;
+        }
+        &--link {
+            color: partials.$Instock-Indigo;
+            display: flex;
+            position: relative;
+            & > p {
+                font-family: "Titillium Web";
+                font-weight: 600;
+            }
+            & > img {
+                position: absolute;
+                top: 0.125rem;
+                left: 95%;
+              }
+              &:hover {
+                text-decoration: underline;
+                & > img {
+                  animation-name: w-arrow;
+                  animation-duration: 0.25s;
+                  animation-fill-mode: forwards;
+                }
+              }
+        }
+        &--contact-name {
+            & > p {
+                margin-bottom: 1rem;
+            }
+        }
+        &--icons {
+            display: flex;
+            justify-content: space-between;
+            position: absolute;
+            width: calc(100% - 2rem);
+            bottom: 1rem;
+        }
+        &--icon-left {
+            cursor: pointer;
+        }
+        &--icon-right {
+            cursor: pointer;
+        }
+        &--subtitle {
+            @include partials.mBodySmall;
+            font-family: "Titillium Web";
+            color: partials.$Slate;
+            margin-bottom: 0.5rem;
+        }
+        &--location {
+            display: flex;
+            & > p {
+                @include partials.mBodyMedium;
+                font-weight: 600;
+                font-family: "Titillium Web";
+            color: partials.$Instock-Indigo;
+            }
+        }  
+        &--text {
+            @include partials.mBodySmall;
+            font-family: "Titillium Web";
+            color: partials.$Instock-Black;
+        }
+        &--modal {
+            background-color:rgba(35, 41, 64, 0.5);
+            width: 100%;
+            height: 100%;
+            z-index: 100;
+            position: fixed;
+            top: 0;
+            left: 0;
+            & > div {
+                background-color: partials.$White;
+                padding: 1rem;
+                width: 100%;
+                height: 100%;
+                z-index: 100;
+                position: fixed;
+                top: 0;
+                left: 0;
+                & > h1 {
+                    margin-top: 2.75rem;
+                }
+                & > p {
+                   width: calc(100% - 2rem); 
+                }
+                & > div {
+                    width: calc(100% - 2rem);
+                    position: absolute;
+                    bottom: 3rem;
+                }
+            }
+            &--icon {
+                position: absolute;
+                right: 3rem;
+                top: 1rem;
+                cursor: pointer;
+            }
+            &--cancel {
+                @include partials.mLabelsLinksButtons;
+                    cursor: pointer;
+                    padding: 0.5rem 2.75rem; 
+                    background: partials.$White;
+                    border: 0.0625rem solid partials.$Cloud;
+                    box-sizing: border-box;
+                    border-radius: 1.25rem;
+                    font-family: "Titillium Web";
+                    font-weight: 600;
+                    font-style: normal;
+                    margin-right: 1rem;
+                    width: calc(50% - 1.5rem);
+                    color: partials.$Slate;
+                    &:hover {
+                        border: 0.0625rem solid partials.$Instock-Indigo;
+                    }
+            }
+            &--delete {
+                @include partials.mLabelsLinksButtons;
+                cursor: pointer;
+                padding: 0.5rem 2.75rem;
+                background: partials.$Red;
+                border-radius: 1.25rem;
+                font-family: 'Titillium Web';
+                font-weight: 600;
+                font-style: normal;
+                width: calc(50% - 1.5rem);
+                color: partials.$White;
+                border: 0;     
+                &:hover {
+                    background: partials.$Graphite;
+                    outline: 0;
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: partials.$screen-tablet-min) {
+    .section {
+        &__warehouses {
+            &--row {
+                display: table-row;
+                height: auto;
+            }
+            &--location {
+                margin: 0;
+            }
+            &--name {
+                padding: 1rem 0 1rem 2rem;
+            }
+            &--contact-info {
+                padding: 1rem 0;
+    
+            }
+            &--contact-name {
+                padding: 1rem 0;
+                & > p {
+                    max-width: 10rem;
+                    margin-bottom: 0;
+                }
+            }
+            &--address {
+                max-width: 6rem;
+                padding: 1rem 1rem 1rem 0;
+            }
+            &--subtitle {
+                display: none;
+                margin: 0;
+            }
+            &--icons {
+                display: table-cell;
+                width: auto;
+                position: relative;
+                bottom: auto;
+            }
+            &--icon-left {
+                margin-right: 1.5rem;
+            }
+            &--text {
+                @include partials.dtBodyMedium;
+            }
+            &--modal {
+                & > div {
+                top: 11.5625rem;
+                left: calc(50% - 24rem);
+                padding: 2.5rem 4rem;
+                width: 42rem;
+                height: 16.375rem;
+                z-index: 100;
+                position: fixed;
+                & > h1 {
+                    margin-top:0;
+                }
+                & > p {
+                    @include partials.dtBodyLarge;
+                }
+                & > div {
+                    width: 100%;
+                    left: calc(100% - 12rem);
+                }
+                }
+                &--icon {
+                    top: 1.375rem;
+                    right: 1.375rem;
+                }
+                &--cancel {
+                    padding: 0.5rem 0;
+                    width: 4.5rem;
+                }
+                &--delete {
+                    padding: 0.5rem 0;
+                    width: 4.5rem;
+                }
+            }
+            &--modal {
+                & > div {
+                top: 8rem;
+                left: calc(50% - 26rem);
+                padding: 2.5rem 4rem;
+                width: 42rem;
+                height: 16.375rem;
+                z-index: 100;
+                position: fixed;
+                & > h1 {
+                    margin-top:0;
+                }
+                & > p {
+                    @include partials.dtBodyLarge;
+                }
+                & > div {
+                    width: 100%;
+                    left: calc(100% - 12rem);
+                }
+                }
+                &--icon {
+                    top: 1.375rem;
+                    right: 1.375rem;
+                }
+                &--cancel {
+                    padding: 0.5rem 0;
+                    width: 4.5rem;
+                }
+                &--delete {
+                    padding: 0.5rem 0;
+                    width: 4.5rem;
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: partials.$screen-computer-min ) {
+    .section {
+        &__warehouses {
+            &--name {
+                min-width: auto;
+            }
+            &--address {
+                max-width: 15rem;
+                & > p {
+                    max-width: 15rem;
+                }
+            }
+        }
+    }
+}

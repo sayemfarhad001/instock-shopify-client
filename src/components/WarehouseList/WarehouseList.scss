@@ -1,0 +1,132 @@
+@use "../../styles/partials.scss";
+
+.section {
+    &__warehouses {
+        background-color: partials.$White;
+        margin: 0 1rem;
+        position: relative;
+        top: 10rem;
+        z-index: 6;
+        box-shadow: 0 0.125rem 0.3125rem rgba(19, 24, 44, 0.1);
+        border-radius: 3px;
+        &--subheader {
+            font-family: "Titillium Web";
+            padding: 1.5rem;
+        }
+        &--title {
+            @include partials.mPageHeader;
+            font-family: "Titillium Web";
+            margin-bottom: 1rem;
+        }
+        &--search {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            margin-bottom: 1rem;
+            &-input {
+                padding: 0.5rem;
+                border: 0.0625rem solid partials.$Cloud;
+                border-radius: 1.25rem;
+                &::placeholder {
+                    font-family: "Titillium Web";
+                }
+            }
+            &-icon {
+                position: absolute;
+                right: 1rem;
+            }
+        }
+        
+        
+        &--add {
+            text-align: center;
+            border-radius: 1.25rem;
+            padding: 0.5rem;
+            width: calc(100% - 1rem);
+            background-color: partials.$Instock-Indigo;
+            & > p {
+                color: partials.$White;
+            }
+        }
+        &--table-header {
+            display: none;
+        }
+        &--table {
+            width: 100%;
+            border-collapse: collapse;
+            border-spacing: 1rem;
+        }
+    }
+    &__loading {
+        margin: auto;
+    }
+}
+
+.display {
+    display: block;
+}
+
+.hidden {
+    display: none;
+}
+
+@media (min-width: partials.$screen-tablet-min ) {
+    .section {
+        &__warehouses {
+            top: 6rem;
+            &--subheader {
+                display: flex;
+                justify-content: space-between;
+                padding: 1.375rem 2rem;
+                & > div {
+                    display: flex;
+                }
+            }
+            &--title {
+                margin: 0;
+            }
+            &--search {
+                margin: 0;
+            }
+            &--add {
+                margin-left: 1rem;
+
+                &:hover {
+                    background-color: partials.$Graphite;
+                }
+            }
+            &--table-header {
+                @include partials.dtTableHeader;
+                font-family: "Titillium Web";
+                background-color: partials.$Light-Grey;
+                width: 100%;
+                display: table-row;
+                text-align: left;
+                & > th:first-child {
+                    padding-left: 2rem;
+                }
+                & > th {
+                    color: partials.$Slate;
+                    padding-top: 0.75rem;
+                    padding-bottom: 0.75rem;
+                    position: relative;
+                    & > img {
+                        position: absolute;
+                    }
+                }
+            }
+            
+        }
+    }
+}
+
+@media (min-width: partials.$screen-computer-min) {
+    .section {
+        &__warehouses {
+            margin: auto;
+            max-width: 66rem;
+        }
+    }
+}
+

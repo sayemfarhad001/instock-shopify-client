@@ -1,0 +1,161 @@
+@use "../../styles/partials.scss";
+
+.add-warehouse {
+  position: relative;
+  top: 10rem;
+  left: 1rem;
+  width: calc(100% - 2rem);
+  background-color: partials.$White;
+  padding-bottom: 1rem;
+  border-radius: 0.25rem;
+  box-shadow: 0 0.125rem 0.3125rem rgba(19, 24, 44, 0.1);
+
+  @media (min-width: partials.$screen-tablet-min) {
+      top: 6rem;
+  }
+
+  @media (min-width: partials.$screen-computer-min) {
+    margin: auto;
+    max-width: 66rem;
+}
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    input {
+      @include partials.mForm;
+      border: 0.063rem solid partials.$Cloud;
+      outline: none;
+      width: calc(100% - 2rem);
+      @media (min-width: partials.$screen-tablet-min) {
+        @include partials.dtForm;
+      }
+
+      &:active,
+      &:focus {
+        border: 0.063rem solid partials.$Instock-Indigo;
+        outline: none;
+      }
+
+      &:invalid {
+        border: 0.0625rem solid partials.$Red;
+      }
+    }
+  }
+  &__form {
+    &--container {
+      @media (min-width: partials.$screen-tablet-min) {
+        display: flex;
+        flex-direction: row;
+      }
+    }
+    &--subtitle {
+      font-family: "Titillium Web";
+      @include partials.mSubheader;
+      margin-top: 0px;
+      @media (min-width: partials.$screen-tablet-min) {
+        @include partials.dtSubheader;
+        margin-bottom: 0.5rem;
+      }
+    }
+    &--label {
+      font-family: "Titillium Web";
+      @include partials.mLabelsLinksButtons;
+      color-adjust: partials.$Instock-Black;
+      @media (min-width: partials.$screen-tablet-min) {
+        @include partials.dtLabelsLinksButtons;
+        margin-top: 1.5rem;
+      }
+    }
+    &--warehouse-details {
+      display: flex;
+      flex-direction: column;
+      padding: 1rem;
+
+      @media (min-width: partials.$screen-tablet-min) {
+          width: 50%;
+        margin-top: 2rem;
+        padding: 0 2rem 2rem 2rem;
+        border-right: 0.0625rem solid partials.$Cloud;
+      }
+    }
+    &--contact-details {
+      display: flex;
+      flex-direction: column;
+      padding: 1rem;
+
+      @media (min-width: partials.$screen-tablet-min) {
+        width: 50%;
+          margin-top: 2rem;
+        padding: 0 2rem 2rem 2rem;
+      }
+    }
+    &--buttons {
+      margin-top: 1rem;
+      display: flex;
+      margin-left: 1.5rem;
+      margin-right: 1.5rem;
+
+      @media (min-width: partials.$screen-tablet-min) {
+        justify-content: flex-end;
+        margin-right: 2rem;
+        margin-bottom: 1rem;
+      }
+    }
+  }
+  &__title {
+    @include partials.mPageHeader;
+    display: flex;
+    justify-content: center;
+    padding: 2rem 0 1.25rem 2rem;
+    font-family: "Titillium Web";
+    border-bottom: 0.0625rem solid partials.$Cloud;
+
+    @media (min-width: partials.$screen-tablet-min) {
+      @include partials.dtPageHeader;
+      padding: 2rem 0 1.3125rem 2rem;
+      justify-content: flex-start;
+      a {
+        margin-right: 2rem;
+      }
+    }
+  }
+}
+
+.button {
+  &--cancel {
+    @include partials.mButton;
+    cursor: pointer;
+    border: 0.063rem solid partials.$Cloud;
+    margin-right: 1.063rem;
+    @media (min-width: partials.$screen-tablet-min) {
+      @include partials.dtButton;
+    }
+
+    &:hover {
+      border: 0.063rem solid partials.$Instock-Indigo;
+    }
+  }
+  &--submit {
+    @include partials.mButton;
+    cursor: pointer;
+    background-color: partials.$Instock-Indigo;
+    color: partials.$White;
+    border: 0px;
+    @media (min-width: partials.$screen-tablet-min) {
+      @include partials.dtButton;
+    }
+    &:hover {
+      background-color: partials.$Graphite;
+    }
+  }
+}
+
+.text-danger {
+  color: partials.$Red;
+  @include partials.mLabelsLinksButtons;
+
+  @media (min-width: partials.$screen-tablet-min) {
+    @include partials.dtLabelsLinksButtons;
+  }
+}

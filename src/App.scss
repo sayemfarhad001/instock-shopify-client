@@ -1,0 +1,16 @@
+@use "./styles/partials.scss";
+
+body, .App {
+    background-color: partials.$Light-Grey;   
+}
+
+h1, h4, p {
+    margin: 0;
+    margin-block-start: 0;
+    margin-block-end: 0;
+}
+
+a {
+    text-decoration: none;
+}
+

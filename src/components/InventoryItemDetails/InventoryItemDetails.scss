@@ -1,0 +1,187 @@
+@use "../../styles/partials.scss";
+
+.inventory {
+  &__details {
+    z-index: 20;
+    background-color: partials.$White;
+    position: relative;
+    top: 10rem;
+    margin: 0 1rem;
+    box-shadow: 0 0.125rem 0.3125rem rgba(19, 24, 44, 0.1);
+    &--container {
+      &-left {
+        display: flex;
+        flex-direction: column;
+        padding: 1rem;
+      }
+      &-right {
+        display: flex;
+        padding: 0 1rem 1rem 1rem;
+      }
+    }
+    &--header {
+      color: partials.$Instock-Black;
+      padding: 1rem;
+      border-bottom: 0.0625rem solid partials.$Cloud;
+      display: flex;
+      justify-content: space-between;
+    }
+    &--subheader {
+      font-family: "Titillium Web";
+      font-style: normal;
+      font-weight: 600;
+      font-size: 0.75rem;
+      line-height: 1.125rem;
+      color: #5c667e;
+      
+    }
+    &--name {
+      font-family: "Titillium Web";
+      font-style: normal;
+      font-weight: 600;
+      font-size: 2rem;
+      line-height: 2.5rem;
+      display: flex;
+      align-items: baseline;
+      & > img {
+        margin-right: 1rem;
+        max-height: 1rem;
+      }
+    }
+    &--text {
+      font-family: "Titillium Web";
+      height: 1.375rem;
+      font-weight: 400;
+      font-size: 0.875rem;
+      line-height: 1.375rem;
+      color: partials.$Instock-Black;
+    }
+    &--text {
+        font-family: "Titillium Web";
+        height: 1.375rem;
+        font-weight: 400;
+        font-size: 0.875rem;
+        line-height: 1.375rem;
+        color: partials.$Instock-Black;
+      }
+    &--desc {
+        & > p {
+            margin-bottom: 1rem;
+        }
+    }
+    &--edit {
+      position: relative;
+      background-color: partials.$Instock-Indigo;
+      height: 2rem;
+      width: 2rem;
+      border-radius: 1.5rem;
+      &-text {
+        display: none;
+        position: relative;
+        color: partials.$White;
+        font-family: "Titillium Web";
+        font-style: normal;
+        font-size: 0.875rem;
+        line-height: 1.375rem;
+      }
+
+      &:hover {
+        background-color: partials.$Graphite;
+      }
+      &-icon {
+          position: absolute;
+          top: 12.5%;
+          left: 12.5%;
+        filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(288deg)
+          brightness(202%) contrast(102%);
+        margin-right: 0.5rem;
+      }
+    }
+    &--status {
+        width: 50%;
+    }
+    &--stock {
+        width: 4rem;
+    }
+    &--warehouse {
+        padding: 0 1rem 1rem 1rem;
+    }
+    &--sq {
+        width: 50%;
+    }
+  }
+}
+
+.outOfStock {
+  font-size: 0.75rem;
+  font-weight: 600;
+  line-height: 1.125rem;
+  text-transform: uppercase;
+  text-align: center;
+  font-family: "Titillium Web";
+  color: partials.$Red;
+  border-radius: 1rem;
+}
+
+.inStock {
+  font-size: 0.75rem;
+  font-weight: 600;
+  line-height: 1.125rem;
+  text-transform: uppercase;
+  text-align: center;
+  font-family: "Titillium Web";
+  color: partials.$Green;
+  border-radius: 1rem;
+}
+
+@media (min-width: partials.$screen-tablet-min) {
+  .inventory {
+    &__details {
+      top: 6rem;
+      &--header {
+          padding: 2rem 2rem 1.2rem 2rem;
+      }
+      &--container {
+          display: flex;
+        &-left {
+          width: calc(50% - 4rem);
+          flex-direction: column;
+          padding: 0;
+          margin: 2rem;
+          border-right: 0.0625rem solid partials.$Cloud;
+        }
+        &-right {
+          width: calc(50% - 4rem);
+        }
+      }
+      &--edit {
+        height: auto;
+        width: 7rem;
+        &-text {
+          display: inline-block;
+          top: 0.5rem;
+          left: 3rem;
+        }
+      }
+      &--status {
+          padding: 0;
+          margin-bottom: 1rem;
+      }
+      &--warehouse {
+        padding: 2rem;
+    }
+      &--sq {
+          padding: 2rem;
+      }
+    }
+  }
+}
+
+@media (min-width: partials.$screen-computer-min) {
+    .inventory {
+        &__details {
+            margin: auto;
+            max-width: 66rem;
+        }
+    }
+}

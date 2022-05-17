@@ -1,0 +1,555 @@
+@use "../../styles/partials";
+
+@mixin tablet {
+    @media (min-width: partials.$screen-tablet-min) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media (min-width: partials.$screen-computer-min) {
+        @content;
+    }
+}
+
+@mixin regular {
+    font-family: "Titillium Web";
+    font-weight: 400;
+    font-style: normal;
+}
+
+@mixin demi {
+    font-family: "Titillium Web";
+    font-weight: 600;
+    font-style: normal;
+}
+
+.editwarehouse {
+    position: relative;
+    top: 10rem;
+    margin: 0 1rem;
+    background: partials.$White;
+    box-shadow: 0 0.125rem 0.3125rem rgba(19, 24, 44, 0.1);
+    border-radius: 3px;
+
+    @include tablet {
+        top: 6rem;
+        margin: 0 2rem;
+    }
+    @include desktop {
+        width: 66rem;
+        margin: auto;
+    }
+
+    &__nav{
+        padding: 1.5rem 1rem;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+    
+        @include tablet {
+          display: flex;
+          align-items: center;
+          padding: 0 2rem 0;
+        }
+    
+        @include desktop {
+          padding: 0 2rem 0;
+        }
+
+    }
+
+    &__image {
+        padding-right: 0.5rem;
+
+    }
+
+    
+  &__title {
+    @include demi;
+    font-size: 1.75rem;
+    line-height: 2.25rem;
+    margin-bottom: 0;
+    
+    @include tablet {
+      padding-left: 0;
+      padding: 1.5rem 0 1.56rem;
+    }
+
+    @include desktop {
+      padding-left: 1.5rem;
+      font-size: 2rem;
+      line-height: 2.5rem;
+      padding: 1.4rem 0;
+    }
+  }
+
+  &__wrapper {
+        display: none;
+
+    &-error{
+        display: flex;
+        align-items: center;
+        margin-top:0;
+    }
+
+    &-image {
+        width: 1.25rem;
+        height: 0.875rem;
+    }
+
+    &-text {
+        @include regular;
+        font-size: 0.75rem;
+        line-height: 1.125rem;
+        color: partials.$Red;
+    }
+  }
+
+  &__details {
+      padding:0 1rem 1rem;
+      border-top: 0.0625rem solid partials.$Cloud;
+
+      @include tablet {
+        width: -webkit-fill-available;
+        border:0;
+        padding: 0 2rem 1rem 0;
+      }
+
+      &-title {
+        font-family: "Titillium Web";
+        font-weight: 600;
+        font-style: normal;
+        font-size: 1.25rem;
+        line-height: 1.75rem;
+        color: partials.$Instock-Black;
+        padding: 1rem 0 1.5rem;
+        
+        @include tablet {
+            margin: 0;
+            font-size: 1.5rem;
+            line-height: 2rem;
+            padding: 0.5rem 0 2rem;
+        }
+
+      }
+      
+    &-top {
+        margin-bottom: 1rem
+    }
+
+
+    &-name {
+        @include demi;
+        font-size: 0.75rem;
+        line-height: 1.25rem;
+        color: partials.$Instock-Black;
+
+        &-input {
+            height: 2.25rem;
+            width: 100%;
+            background: partials.$White;
+            border: 0.0625rem solid partials.$Cloud;
+            box-sizing: border-box;
+            border-radius: 1.25rem;
+            position: relative;
+            padding-left: 1rem;
+            @include regular;
+            font-size: 0.875rem;
+            line-height: 1.375rem;
+
+            &:focus {
+                border: 0.0625rem solid partials.$Instock-Indigo;
+                outline: 0;
+            }
+
+        }
+
+        &-error {
+
+            &:focus {
+                border: 0.0625rem solid partials.$Red;
+                outline: 0;
+            }
+        }
+    }
+
+
+    &-mid {
+        margin-bottom: 1rem
+    }
+
+
+    &-address {
+        @include demi;
+        font-size: 0.75rem;
+        line-height: 1.25rem;
+        color: partials.$Instock-Black;
+
+        &-input {
+            height: 2.25rem;
+            width: 100%;
+            background: partials.$White;
+            border: 0.0625rem solid partials.$Cloud;
+            box-sizing: border-box;
+            border-radius: 1.25rem;
+            position: relative;
+            @include regular;
+            font-size: 0.875rem;
+            line-height: 1.375rem;
+            padding-left: 1rem;
+
+            &:focus {
+                border: 0.0625rem solid partials.$Instock-Indigo;
+                outline: 0;
+            }
+        }
+
+        &-error{
+
+            &:focus {
+                border: 0.0625rem solid partials.$Red;
+                outline: 0;
+            }
+        }
+    }
+
+    &-city {
+        @include demi;
+        font-size: 0.75rem;
+        line-height: 1.25rem;
+        color: partials.$Instock-Black;
+
+        &-input {
+            height: 2.25rem;
+            width: 100%;
+            background: partials.$White;
+            border: 0.0625rem solid partials.$Cloud;
+            box-sizing: border-box;
+            border-radius: 1.25rem;
+            position: relative;
+            @include regular;
+            font-size: 0.875rem;
+            line-height: 1.375rem;
+            padding-left: 1rem;
+
+            &:focus {
+                border: 0.0625rem solid partials.$Instock-Indigo;
+                outline: 0;
+            }
+        }
+
+        &-error{
+            
+            &:focus {
+                border: 0.0625rem solid partials.$Red;
+                outline: 0;
+            }
+        }
+
+    }
+
+    &-bottom {
+        margin-bottom: 1rem
+    }
+
+    &-country {
+        @include demi;
+        font-size: 0.75rem;
+        line-height: 1.25rem;
+        color: partials.$Instock-Black;
+
+        &-input {
+            height: 2.25rem;
+            width: 100%;
+            background: partials.$White;
+            border: 0.0625rem solid partials.$Cloud;
+            box-sizing: border-box;
+            border-radius: 1.25rem;
+            position: relative;
+            @include regular;
+            font-size: 0.875rem;
+            line-height: 1.375rem;
+            padding-left: 1rem;
+
+            &:focus {
+                border: 0.0625rem solid partials.$Instock-Indigo;
+                outline: 0;
+            }
+        }
+
+        &-error{
+
+            &:focus {
+                border: 0.0625rem solid partials.$Red;
+                outline: 0;
+            }
+        }
+    }
+  }
+
+  &__contact{
+
+    &-details {
+        padding:0 1rem;
+        border-top: 0.0625rem solid partials.$Cloud;
+
+        @include tablet {
+            width: -webkit-fill-available;
+            border:0;
+            border-left: 0.0625rem solid partials.$Cloud;;
+            padding: 0 0 0 2rem;
+          }
+
+        &-title {
+            @include demi;
+            font-size: 1.25rem;
+            line-height: 1.75rem;
+            color: partials.$Instock-Black;
+            padding: 1rem 0 1.5rem;
+
+            @include tablet {
+                margin: 0;
+                font-size: 1.5rem;
+                line-height: 2rem;
+                padding: 0.5rem 0 2rem;
+            }
+        }
+        
+
+    }
+
+    &-top {
+        margin-bottom: 1rem;
+    }
+
+
+    &-name {
+        @include demi;
+        font-size: 0.75rem;
+        line-height: 1.25rem;
+        color: partials.$Instock-Black;
+
+        &-input {
+            height: 2.25rem;
+            width: 100%;
+            background: partials.$White;
+            border: 0.0625rem solid partials.$Cloud;
+            box-sizing: border-box;
+            border-radius: 1.25rem;
+            position: relative;
+            @include regular;
+            font-size: 0.875rem;
+            line-height: 1.375rem;
+            padding-left: 1rem;
+
+            &:focus {
+                border: 0.0625rem solid partials.$Instock-Indigo;
+                outline: 0;
+            }
+        }
+
+        &-error{
+
+            &:focus {
+                border: 0.0625rem solid partials.$Red;
+                outline: 0;
+            }
+        }
+    }
+
+    &-mid {
+        margin-bottom: 1rem;
+    }
+
+
+    &-position {
+        @include demi;
+        font-size: 0.75rem;
+        line-height: 1.25rem;
+        color: partials.$Instock-Black;
+
+        &-input{
+            height: 2.25rem;
+            width: 100%;
+            background: partials.$White;
+            border: 0.0625rem solid partials.$Cloud;
+            box-sizing: border-box;
+            border-radius: 1.25rem;
+            position: relative;
+            @include regular;
+            font-size: 0.875rem;
+            line-height: 1.375rem;
+            padding-left: 1rem;
+
+            &:focus {
+                border: 0.0625rem solid partials.$Instock-Indigo;
+                outline: 0;
+            }
+        }
+
+        &-error{
+            
+            &:focus {
+                border: 0.0625rem solid partials.$Red;
+                outline: 0;
+            }
+        }
+    }
+
+    &-number {
+        @include demi;
+        font-size: 0.75rem;
+        line-height: 1.25rem;
+        color: partials.$Instock-Black;
+
+        &-input {
+            height: 2.25rem;
+            width: 100%;
+            background: partials.$White;
+            border: 0.0625rem solid partials.$Cloud;
+            box-sizing: border-box;
+            border-radius: 1.25rem;
+            position: relative;
+            @include regular;
+            font-size: 0.875rem;
+            line-height: 1.375rem;
+            padding-left: 1rem;
+
+            &:focus {
+                border: 0.0625rem solid partials.$Instock-Indigo;
+                outline: 0;
+            }
+        }
+
+        &-error{
+            
+            &:focus {
+                border: 0.0625rem solid partials.$Red;
+                outline: 0;
+            }
+        }
+    }
+
+    &-bottom {
+        margin-bottom: 1rem;
+    }
+
+    
+    &-email {
+        @include demi;
+        font-size: 0.75rem;
+        line-height: 1.25rem;
+        color: partials.$Instock-Black;
+
+        &-input {
+            height: 2.25rem;
+            width: 100%;
+            background: partials.$White;
+            border: 0.0625rem solid partials.$Cloud;
+            box-sizing: border-box;
+            border-radius: 1.25rem;
+            position: relative;
+            @include regular;
+            font-size: 0.875rem;
+            line-height: 1.375rem;
+            padding-left: 1rem;
+            
+            &:focus {
+                border: 0.0625rem solid partials.$Instock-Indigo;
+                outline: 0;
+            }
+        }
+
+        &-error{
+            
+            &:focus {
+                border: 0.0625rem solid partials.$Red;
+                outline: 0;
+            }
+        }
+    }
+  }
+    &__button {
+
+        &-section {
+            background: rgba(247, 248, 249, 0.7);
+            border-radius: 0px 0px 3px 3px;
+            display: flex;
+            justify-content: space-between;
+            padding: 1rem 1rem;
+            margin: 1rem 0 0 0;
+
+            @include tablet {
+                justify-content: flex-end;
+            }
+
+        }
+    }
+
+    &__cancel{
+
+        &-button{
+            display: flex;
+            align-items: center;
+            padding: 0.5rem 34px;
+            background: partials.$White;
+            border: 0.0625rem solid partials.$Cloud;
+            box-sizing: border-box;
+            border-radius: 1.25rem;
+            font-family: "Titillium Web";
+            @include demi;
+            font-size: 0.75rem;
+            line-height: 1.25rem;
+            color: #5C667E;
+
+            &:hover {
+                border: 0.0625rem solid partials.$Instock-Indigo;
+            }
+
+            @include tablet{
+                display: inline-block;
+                margin-right: 1rem;
+                text-align: center;
+                padding: 0.5rem 2rem;
+            }
+        }
+    }
+
+    &__save{
+
+        &-button{
+            display: flex;
+            align-items: center;
+            padding: 0.5rem 2.75rem;
+            background: #2E66E6;
+            border-radius: 1.25rem;
+            font-family: 'Titillium Web';
+            @include demi;
+            font-size: 0.75rem;
+            line-height: 1.25rem;
+            color: partials.$White;
+            border: 0;     
+
+            &:hover {
+                background: #232940;
+                outline: 0;
+            }
+
+            @include tablet {
+                padding: 0.5rem 1.75rem;
+            }
+        }
+    }
+}
+
+.top-section {
+    @include tablet {
+        display: flex;
+        justify-content: space-between;
+        padding: 1rem 2rem 0;
+        border-top: 0.0625rem solid partials.$Cloud;;
+    }
+}
+
+

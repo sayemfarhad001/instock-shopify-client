@@ -1,0 +1,179 @@
+//type kit
+    //Desktop and Tablet
+    @mixin dtPageHeader {
+        font-size: 2rem;
+        line-height: 2.5rem;
+    }
+    @mixin dtSubheader {
+        font-size: 1.5rem;
+        line-height: 2rem;
+    }
+    @mixin dtLabelsLinksButtons {
+        font-size: 0.875rem;
+        line-height: 1.375rem;
+    }
+    @mixin dtTableHeader {
+        font-size: 0.75rem;
+        line-height: 1.125rem;
+    }
+    @mixin dtBodyLarge {
+        font-size: 1rem;
+        line-height: 1.75rem;
+    }
+    @mixin dtBodyMedium {
+        font-size: 0.875rem;
+        line-height: 1.375rem;
+    }
+    @mixin dtBodySmall {
+        font-size: 0.75rem;
+        line-height: 1.125rem;
+    }
+
+    //Mobile
+    @mixin mPageHeader {
+        font-size: 1.75rem;
+        line-height: 2.25rem;
+    }
+    @mixin mSubheader {
+        font-size: 1.25rem;
+        line-height: 1.75rem;
+    }
+    @mixin mLabelsLinksButtons {
+        font-size: 0.875rem;
+        line-height: 1.25rem;
+    }
+    @mixin mTableHeader {
+        font-size: 0.75rem;
+        line-height: 1rem;
+    }
+    @mixin mBodyLarge {
+        font-size: 1rem;
+        line-height: 1.625rem;
+    }
+    @mixin mBodyMedium {
+        font-size: 0.875rem;
+        line-height: 1.25rem;
+    }
+    @mixin mBodySmall {
+        font-size: 0.75rem;
+        line-height: 1rem;
+    }
+
+//fonts
+    @import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400;600&display=swap');
+
+//colours
+    //Primary Colours
+    $Instock-Black: #13182C; //text
+    $Instock-Indigo: #2E66E5; //interacitve elements
+    $White: #FFFFFF; //global white
+
+    //Secondary Colours
+    $Slate: #5C667E; // table coloumn headers and placeholder text
+    $Cloud: #BDC5D5; // outlines, dividers, borders, table sorting icon
+
+    //Background Colours
+    $Graphite: #232940; // top navigation header background, CTA button hover state background
+    $Light-Grey: #F7F8F9; // page background, table column header background, CTA background
+
+    //Supporting Colours
+    $Green: #158463; //"In-stick" label
+    $Red: #C94515; //" Out of Stock" label, error states, delete icon
+
+//Breakpoints Mobile and Computer
+    $screen-mobile-max: 46.875rem;
+    $screen-tablet-min: 46.9375rem;
+    $screen-computer-min: 75rem;
+
+//Buttons
+        @mixin dtButton {
+            height: 2.375rem;
+            width: auto;
+            padding-right: 1rem;
+            padding-left: 1rem;
+            border-radius: 1.25rem;
+        }
+        @mixin mButton {
+            height: 2.25rem;
+            width: 100%;
+            border-radius: 1.25rem;
+        }
+
+        //Radio Buttons
+        @mixin radio {
+            margin-top: 0.25rem;
+            margin-right: 0.5rem;
+        }
+
+//Form Fields
+        @mixin dtForm {
+            height: 38px;
+            padding-left: 16px;
+            padding-right: 16px;
+            margin-top: 4px;
+            border-radius: 20px;
+        }
+
+        @mixin mForm {
+            height: 36px;
+            padding-left: 16px;
+            padding-right: 16px;
+            margin-top: 4px;
+            border-radius: 20px;
+            height: 2.375rem;
+            width: 100%;
+            padding-left: 1rem;
+            padding-right: 1rem;
+            margin-top: 0.25rem;
+            border-radius: 1.25rem;
+            border: 1px solid $Cloud;
+        }
+
+        @mixin mForm {
+            height: 2.25rem;
+            width: 100%;
+            padding-left: 1rem;
+            padding-right: 1rem;
+            margin-top: 0.25rem;
+            border-radius: 1.25rem;
+            border: 1px solid $Cloud;
+        }
+
+//Tags
+    @mixin dtInStock {
+        height: 1.625rem;
+        width: auto;
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+        background-color: $Green, 7;
+        border-radius: 1.25rem;
+    }
+        @mixin mInStock {
+            height: 24px;
+        }
+        @mixin dtInStock {
+            height: 1.5rem;
+            width: auto;
+            padding-left: 0.5rem;
+            padding-right: 0.5rem;
+            background-color: $Green, 7;
+            border-radius: 1.25rem;
+        }
+
+    @mixin dtOutofStock {
+        height: 1.625rem;
+        width: auto;
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+        background-color: $Red, 7;
+        border-radius: 1.25rem;
+    }
+
+    @mixin mOutofStock {
+        height: 1.625rem;
+        width: auto;
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+        background-color: $Red, 7;
+        border-radius: 1.25rem;
+    }
