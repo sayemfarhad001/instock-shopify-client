@@ -8,13 +8,20 @@ You will need to download the client git repositories in order to run this app. 
 <a href="https://github.com/sayemfarhad001/instock-shopify-server">here</a>
 
 ## Project Overview
+
 ## 1.1 Description
 It is an inventory mangement appication where you can add / edit / delete warehouses and inventory items.
+
 ## 1.2 Problem
-How to manage the inventory of a warehouse?  
-## 1.3 Features
+Build an inventory tracking web application for a logistics company
+
+## 1.3 Requirement chosen
+- Ability to create warehouses/locations and assign inventory to specific locations
+
+## 1.4 Features
 User can manage inventory items and also manage or add warehouses
-## 1.4 Tech Stack and APIs
+
+## 1.5 Tech Stack and APIs
 - Front-End: React
 - Back-End: NodeJS and Express
 - Libraries & Packages
